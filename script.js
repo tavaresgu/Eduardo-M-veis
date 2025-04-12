@@ -1,12 +1,12 @@
 document.addEventListener('DOMContentLoaded', function() {
     // Portfolio images
     const portfolioItems = [
-        { title: 'Banheiro', galleryFolder: 'Banheiros' },
-        { title: 'Cozinha', galleryFolder: 'Cozinhas' },
-        { title: 'Quarto', galleryFolder: 'Quartos' },
-        { title: 'Sala', galleryFolder: 'Salas' },
-        { title: 'Produção', galleryFolder: 'Produções' },
-        { title: 'Show Room', galleryFolder: 'Showrooms' }
+        { image: 'Banheiro.jpg', title: 'Banheiro', hasGallery: true, galleryFolder: 'Banheiros' },
+        { image: 'Cozinha.jpg', title: 'Cozinha', hasGallery: true, galleryFolder: 'Cozinhas' },
+        { image: 'quarto.jpg', title: 'Quarto', hasGallery: true, galleryFolder: 'Quartos' },
+        { image: 'sala.jpg', title: 'Sala', hasGallery: true, galleryFolder: 'Salas' },
+        { image: 'producao.jpg', title: 'Produção', hasGallery: true, galleryFolder: 'Produções' },
+        { image: 'showroom.jpg', title: 'Show Room', hasGallery: true, galleryFolder: 'Showrooms' }
     ];
 
     const galleryImages = {
@@ -91,33 +91,36 @@ document.addEventListener('DOMContentLoaded', function() {
         col.className = 'col-md-4 mb-4';
         
         const cardHtml = `
-            <div class="card text-center">
+            <div class="card">
+                <img src="${item.image}" class="card-img-top" alt="${item.title}">
                 <div class="card-body">
                     <h5 class="card-title">${item.title}</h5>
-                    <button class="btn btn-primary mt-2">Ver Galeria</button>
+                    ${item.hasGallery ? '<button class="btn btn-primary mt-2">Ver Galeria</button>' : ''}
                 </div>
             </div>
         `;
         
         col.innerHTML = cardHtml;
         
-        const galleryBtn = col.querySelector('.btn');
-        galleryBtn.addEventListener('click', () => {
-            const modal = document.getElementById('galleryModal');
-            const modalTitle = modal.querySelector('.modal-title');
-            const carouselInner = modal.querySelector('.carousel-inner');
-            
-            modalTitle.textContent = `Galeria de ${item.title}`;
-            carouselInner.innerHTML = galleryImages[item.galleryFolder]
-                .map((img, index) => `
-                    <div class="carousel-item ${index === 0 ? 'active' : ''}">
-                        <img src="${img}" class="d-block w-100" alt="${item.title} ${index + 1}">
-                    </div>
-                `).join('');
+        if (item.hasGallery) {
+            const galleryBtn = col.querySelector('.btn');
+            galleryBtn.addEventListener('click', () => {
+                const modal = document.getElementById('galleryModal');
+                const modalTitle = modal.querySelector('.modal-title');
+                const carouselInner = modal.querySelector('.carousel-inner');
+                
+                modalTitle.textContent = `Galeria de ${item.title}`;
+                carouselInner.innerHTML = galleryImages[item.galleryFolder]
+                    .map((img, index) => `
+                        <div class="carousel-item ${index === 0 ? 'active' : ''}">
+                            <img src="${img}" class="d-block w-100" alt="${item.title} ${index + 1}">
+                        </div>
+                    `).join('');
 
-            const bsModal = new bootstrap.Modal(modal);
-            bsModal.show();
-        });
+                const bsModal = new bootstrap.Modal(modal);
+                bsModal.show();
+            });
+        }
         
         portfolioContainer.appendChild(col);
     });
