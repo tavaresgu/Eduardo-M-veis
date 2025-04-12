@@ -1,58 +1,58 @@
 document.addEventListener('DOMContentLoaded', function() {
     // Portfolio images
     const portfolioItems = [
-        { image: '/Banheiro.jpg', title: 'Banheiro', hasGallery: true, galleryFolder: 'Banheiros' },
-        { image: '/Cozinha.jpg', title: 'Cozinha', hasGallery: true, galleryFolder: 'Cozinhas' },
-        { image: '/quarto.jpg', title: 'Quarto', hasGallery: true, galleryFolder: 'Quartos' },
-        { image: '/sala.jpg', title: 'Sala', hasGallery: true, galleryFolder: 'Salas' },
-        { image: '/producao.jpg', title: 'Produção', hasGallery: true, galleryFolder: 'Produções' },
-        { image: '/showroom.jpg', title: 'Show Room', hasGallery: true, galleryFolder: 'Showrooms' }
+        { image: 'Banheiro.jpg', title: 'Banheiro', hasGallery: true, galleryFolder: 'Banheiros' },
+        { image: 'Cozinha.jpg', title: 'Cozinha', hasGallery: true, galleryFolder: 'Cozinhas' },
+        { image: 'quarto.jpg', title: 'Quarto', hasGallery: true, galleryFolder: 'Quartos' },
+        { image: 'sala.jpg', title: 'Sala', hasGallery: true, galleryFolder: 'Salas' },
+        { image: 'producao.jpg', title: 'Produção', hasGallery: true, galleryFolder: 'Produções' },
+        { image: 'showroom.jpg', title: 'Show Room', hasGallery: true, galleryFolder: 'Showrooms' }
     ];
 
     const galleryImages = {
         Banheiros: [
-            '/Banheiros/1.jpg',
-            '/Banheiros/2.jpg',
-            '/Banheiros/3.jpg',
-            '/Banheiros/4.jpg',
-            '/Banheiros/5.jpg',
-            '/Banheiros/6.jpg'
+            'Banheiros/1.jpg',
+            'Banheiros/2.jpg',
+            'Banheiros/3.jpg',
+            'Banheiros/4.jpg',
+            'Banheiros/5.jpg',
+            'Banheiros/6.jpg'
         ],
         Cozinhas: [
-            '/Cozinhas/1.jpg',
-            '/Cozinhas/2.jpg',
-            '/Cozinhas/3.jpg',
-            '/Cozinhas/4.jpg',
-            '/Cozinhas/5.jpg',
-            '/Cozinhas/6.jpg'
+            'Cozinhas/1.jpg',
+            'Cozinhas/2.jpg',
+            'Cozinhas/3.jpg',
+            'Cozinhas/4.jpg',
+            'Cozinhas/5.jpg',
+            'Cozinhas/6.jpg'
         ],
         Quartos: [
-            '/Quartos/1.jpg',
-            '/Quartos/2.jpg',
-            '/Quartos/3.jpg',
-            '/Quartos/4.jpg',
-            '/Quartos/5.jpg',
-            '/Quartos/6.jpg'
+            'Quartos/1.jpg',
+            'Quartos/2.jpg',
+            'Quartos/3.jpg',
+            'Quartos/4.jpg',
+            'Quartos/5.jpg',
+            'Quartos/6.jpg'
         ],
         Salas: [
-            '/Salas/1.jpg',
-            '/Salas/2.jpg',
-            '/Salas/3.jpg',
-            '/Salas/4.jpg',
-            '/Salas/5.jpg',
-            '/Salas/6.jpg'
+            'Salas/1.jpg',
+            'Salas/2.jpg',
+            'Salas/3.jpg',
+            'Salas/4.jpg',
+            'Salas/5.jpg',
+            'Salas/6.jpg'
         ],
         Produções: [
-            '/Produções/1.jpg',
-            '/Produções/2.jpg',
-            '/Produções/3.jpg',
-            '/Produções/4.jpg',
-            '/Produções/5.jpg',
-            '/Produções/6.jpg'
+            'Produções/1.jpg',
+            'Produções/2.jpg',
+            'Produções/3.jpg',
+            'Produções/4.jpg',
+            'Produções/5.jpg',
+            'Produções/6.jpg'
         ],
         Showrooms: [
-            '/Showrooms/1.jpg',
-            '/Showrooms/2.jpg'
+            'Showrooms/1.jpg',
+            'Showrooms/2.jpg'
         ]
     };
 
@@ -173,7 +173,5 @@ document.addEventListener('DOMContentLoaded', function() {
                 });
             }
         });
-    });
-});
     });
 });
